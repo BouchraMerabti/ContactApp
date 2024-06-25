@@ -52,7 +52,7 @@ public class SecondPage extends AppCompatActivity implements View.OnClickListene
             intent.putExtra("Email", etEmail.getText().toString().trim());
             intent.putExtra("Local", etLocation.getText().toString().trim());
 
-            //startActivity(intent);
+      
 
             if (view.getId() == R.id.imSmile){
                 intent.putExtra("mood", "smile");
