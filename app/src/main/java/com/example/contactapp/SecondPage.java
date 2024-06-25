@@ -40,17 +40,19 @@ public class SecondPage extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         if (etName.getText().toString().isEmpty() || etPhone.getText().toString().isEmpty() ||
-        etEmail.getText().toString().isEmpty()|| etLocation.getText().toString().isEmpty()){
+        etEmail.getText().toString().isEmpty()|| etLocation.getText().toString().isEmpty())
+        {
             Toast.makeText(this,"Please enter all fields", Toast.LENGTH_SHORT).show();
 
-        } else{
+        } else
+        {
             Intent intent = new Intent();
             intent.putExtra("Name", etName.getText().toString().trim());
             intent.putExtra("Phone", etPhone.getText().toString().trim());
             intent.putExtra("Email", etEmail.getText().toString().trim());
             intent.putExtra("Local", etLocation.getText().toString().trim());
 
-            startActivity(intent);
+            //startActivity(intent);
 
             if (view.getId() == R.id.imSmile){
                 intent.putExtra("mood", "smile");

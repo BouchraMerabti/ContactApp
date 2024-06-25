@@ -101,8 +101,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CREATE_CONTACT){
-            if (resultCode == RESULT_OK){
+        if (requestCode == CREATE_CONTACT)
+        {
+            if (resultCode == RESULT_OK)
+            {
                 imPhone.setVisibility(View.VISIBLE);
                 imEmail.setVisibility(View.VISIBLE);
                 imLocal.setVisibility(View.VISIBLE);
@@ -115,14 +117,17 @@ public class MainActivity extends AppCompatActivity {
                 location = data.getStringExtra("Local");
                 mood = data.getStringExtra("mood");
 
-                if (mood.equals("smile")){
+                if (mood.equals("smile"))
+                {
                     imEmoji.setImageResource(R.drawable.smile);
                 } else if (mood.equals("neutral")) {
                     imEmoji.setImageResource(R.drawable.neutral);
-                }  {
+                } else {
                     imEmoji.setImageResource(R.drawable.sad);
                 }
 
+            } else {
+                Toast.makeText(this, "No data passed through", Toast.LENGTH_SHORT).show();
             }
         }
     }
